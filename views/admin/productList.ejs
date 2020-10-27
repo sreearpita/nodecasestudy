@@ -1,0 +1,41 @@
+<html>
+<title>login page</title>
+
+<head>
+
+<body>
+    <h1>productlist page</h1>
+
+    <% if(prods.length > 0) { %>
+    <table>
+        <tbody>
+            <%prods.forEach((newprod) =>{%>
+            <tr>
+                <td>name: <%= newprod.name%> </td>
+                <td>description: <%= newprod.description %></td>
+                <td>price: <%= newprod.price %></td>
+                <td>currency: <%= newprod.currency %></td>
+                <td>
+
+                    <a href="/admin/products/<%= newprod.id %>"><button> Details </button> </a>
+                    <a href="/admin/updateproduct/<%= newprod.id %>"><button>update</button></a>
+                    <form action="/admin/deleteProduct" method="POST">
+                        <input type="hidden" value="<%= newprod.id %>" name="id">
+                        <button type="submit">delete</button>
+                    </form>
+
+                </td>
+            </tr>
+
+            <%});%>
+        </tbody>
+    </table>
+    <% } else { %>
+    <h3> no products found </h3>
+    <% } %>
+    <hr>
+    <a href="/admin/addproduct"><button>Add Product</button></a>
+</body>
+</head>
+
+</html>

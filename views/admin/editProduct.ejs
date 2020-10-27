@@ -1,0 +1,27 @@
+<html>
+<title>edit ptoducts</title>
+
+<head>
+
+<body>
+    <h1>edit Product <%= product.name %></h1>
+    <form method="POST">
+
+        <label>name:</label>
+        <input type="text" name="name" value="<%= product.name %>" /></br></br>
+
+        <label> description:</label>
+        <input type="text" name="description" value="<%= product.description %>" /></br></br>
+
+        <label> price:</label>
+        <input type=" number" name="price" value="<%= product.price %>" /></br></br>
+
+        <label> currency:</label>
+        <input type=" text" name="currency" value="<%= product.currency %>" /></br></br>
+
+        <input type="submit" value="update product" />
+    </form>
+</body>
+</head>
+
+</html>

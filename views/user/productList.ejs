@@ -1,0 +1,38 @@
+<html>
+<title>product list</title>
+
+<head>
+
+<body>
+    <h1>user productlist page</h1>
+
+    <% if(prods.length > 0) { %>
+    <table>
+        <tbody>
+            <%prods.forEach((newprod) =>{%>
+            <tr>
+                <td>name: <%= newprod.name%> </td>
+                <td>description: <%= newprod.description %></td>
+                <td>price: <%= newprod.price %></td>
+                <td>currency: <%= newprod.currency %></td>
+                <td>
+                    <a href="/user/products/<%= newprod.id %>"><button> Details </button> </a>
+                </td>
+                <td>
+                    <form action="/user/orderproduct" method="POST">
+                        <input type="hidden" value="<%= newprod.id %>" name="id">
+                        <button type="submit">order</button>
+                    </form>
+                </td>
+            </tr>
+
+            <%});%>
+        </tbody>
+    </table>
+    <% } else { %>
+    <h3> no products found </h3>
+    <% } %>
+</body>
+</head>
+
+</html>

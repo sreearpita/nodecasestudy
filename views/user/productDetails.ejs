@@ -1,0 +1,23 @@
+<html>
+<title>login page</title>
+
+<head>
+
+<body>
+    <h1>user productDetails page</h1>
+
+    <ul>
+            <li name="name">name: <%= product.name %> </li>
+            <li>description: <%= product.description %></li>
+            <li>price: <%= product.price %></li>
+            <li>currency: <%= product.currency %></li>
+            <form action="/user/orderproduct" method="POST"></form>
+            <input type="hidden" value="<%= product.id %>" name="id">
+            <button type="submit">order</button>
+        </form>
+    </ul>
+
+</body>
+</head>
+
+</html>

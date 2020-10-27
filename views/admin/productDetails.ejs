@@ -1,0 +1,24 @@
+<html>
+<title>login page</title>
+
+<head>
+
+<body>
+    <h1>productDetails page</h1>
+
+    <ul>
+        <li>name: <%= product.name %> </li>
+        <li>description: <%= product.description %></li>
+        <li>price: <%= product.price %></li>
+        <li>currency: <%= product.currency %></li>
+        <a href="/admin/updateproduct/<%= product.id %>"><button>update</button></a> </br></br>
+        <form action="/admin/deleteProduct" method="POST">
+            <input type="hidden" value="<%= product.id %>" name="id">
+            <button type="submit">delete</button>
+        </form>
+    </ul>
+
+</body>
+</head>
+
+</html>
